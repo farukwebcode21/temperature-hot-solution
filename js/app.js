@@ -1,3 +1,4 @@
+// Weather Api key
 const API_KEY = `32c4a3d6c9a753d7a754f99266fab00e`;
 
 const searchTemperature =()=>{
@@ -8,11 +9,17 @@ const searchTemperature =()=>{
     fetch(url)
         .then(res => res.json())
         .then(data => displayTemparater(data));
-}
-// searchTemperature();
+};
+
+
+// reveived inner text and set function
+
 const setInnerText =(id, text)=>{
     document.getElementById(id).innerText = text;
-}
+};
+
+// Temperature Displaying Code 
+
 const displayTemparater = temperature =>{
     
     setInnerText('city', temperature.name);
@@ -23,4 +30,4 @@ const displayTemparater = temperature =>{
     const imgIcon = document.getElementById('weather-icon');
     imgIcon.setAttribute('src', url);
 
-}
+};
